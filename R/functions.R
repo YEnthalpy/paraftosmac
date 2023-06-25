@@ -129,7 +129,7 @@ osmacWei.fit <- function(x, y, delta, n.pilot, n.sample, method, se = TRUE,
     }
   }else{
     # Get subsampling probabilities
-    SSP <- osmacWei.ssp(x, y, delta, n.pilot, n.sample, method)
+    SSP <- osmacWei.ssp(x, y, delta, n.pilot, method)
     
     # Select subsample and calculate the estimator. Stop when converges.
     for (i in 1:1000) {
