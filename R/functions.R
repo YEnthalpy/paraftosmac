@@ -77,7 +77,7 @@ osmacWei.est <- function(x, y, delta, pi,
 }
 
 # Function 3: Calculate SSP for different method.
-osmacWei.ssp <- function (x, y, delta, n.pilot, n.sample, 
+osmacWei.ssp <- function (x, y, delta, n.pilot,
                          method, control = list(maxit = 1000)) {
   n <- nrow(x)
   if (method == "uniform") {
@@ -100,11 +100,11 @@ osmacWei.ssp <- function (x, y, delta, n.pilot, n.sample,
     beta.pilot <- mle.pilot$para
     sig.pilot <- mle.pilot$scale
     g <- gradient(x, y, delta, beta.pilot, sig.pilot, 1)
-    if (method == "mVc") {
+    if (method == "optL") {
       g.norm <- sqrt(rowSums(g ^ 2))
       pr.mvc <- g.norm / sum(g.norm) * (1 - 0.2) + 0.2 / n
       return(list(ssps = pr.mvc, index.pilot = ind.pilot))
-    }else if (method == "mMSE"){
+    }else if (method == "optA"){
       # Use pilot sample to calculate Hessian
       M <- hessian(x.pilot, y.pilot, delta.pilot, beta.pilot, sig.pilot, 1)
       M.inv <- solve(M)

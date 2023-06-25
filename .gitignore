@@ -1,0 +1,15 @@
+*auto
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.Rproj.user
+*.Rhistory
+*.Ruserdata
+*.DS_Store
+.vscode/**
+

@@ -1,0 +1,10 @@
+Package: paraftosmac
+Type: Package
+Title: OSMAC for Parametric AFT Model
+Version: 1.0
+Date: 2023-06-25
+Author: Zehan Yang
+Maintainer: Zehan Yang <zehan.yang@uconn.edu>
+Description: Optimal Subsampling approach for parametric Accelerated Failure Time Models
+License: What license is it under?
+
