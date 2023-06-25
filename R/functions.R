@@ -78,7 +78,7 @@ osmacWei.est <- function(x, y, delta, pi,
 
 # Function 3: Calculate SSP for different method.
 osmacWei.ssp <- function (x, y, delta, n.pilot,
-                         method, control = list(maxit = 1000)) {
+                          method, control = list(maxit = 1000)) {
   n <- nrow(x)
   if (method == "uniform") {
     return(list(ssps = rep(1 / n, n), 

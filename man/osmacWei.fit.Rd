@@ -40,7 +40,7 @@ It returns a matrix with two columns: Est, the first column which is the
 subample estimator; SE, the second column which is the estimated standard errors.
 }
 \examples{
-library(semirkosmac)
+library(paraftosmac)
 # Load the full data
 data(lymp)
 x <- lymp$covariates
