@@ -13,7 +13,7 @@ hessian <- function(x, y, delta, beta, sigma, pi) {
   d2.beta <- -t(x * c(exper)  / pi) %*% x / (sigma ^ 2)
   d2.sig <- sum((delta + 2 * er * (delta - exper) - (er ^ 2) 
                  * exper) / pi) / (sigma ^ 2)
-  d2.sigbeta <- colSums((x * c(delta - exper * (1 + er)))) / (sigma ^ 2)
+  d2.sigbeta <- colSums((x * c(delta - exper * (1 + er))) / pi) / (sigma ^ 2)
   return(cbind(c(d2.sig, d2.sigbeta), 
                rbind(t(d2.sigbeta), d2.beta)))
 }
