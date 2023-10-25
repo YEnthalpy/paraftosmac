@@ -37,7 +37,7 @@ osmacWei.est <- function(x, y, delta, pi,
     er <- (y - x %*% beta) / sigma
     exper <- exp(er)
     #First Derivative of beta
-    d.beta <- colSums(x * c(exper - delta) / pi / sigma) * control$step
+    d.beta <- colSums(x * c(exper - delta) / pi / sigma)
     #Second Derivative of beta
     d2.beta <- -t(x * c(exper)  / pi) %*% x / (sigma ^ 2)
     tryCatch({
@@ -57,7 +57,7 @@ osmacWei.est <- function(x, y, delta, pi,
     er <- (y - x %*% beta) / sigma
     exper <- exp(er)
     # First Derivative of sigma
-    d.sig <- sum((er * exper - delta * er - delta) / pi / sigma) * control$step
+    d.sig <- sum((er * exper - delta * er - delta) / pi / sigma)
     # Second Derivative of sigma
     d2.sig <- sum((delta + 2 * er * (delta - exper) - (er ^ 2)
                    * exper) / pi) / (sigma ^ 2)
